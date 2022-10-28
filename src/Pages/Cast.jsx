@@ -21,6 +21,7 @@ export const Cast = () => {
          try {
             const res = await axios.get (`https://api.themoviedb.org/3/movie/${params.name}/credits?api_key=12cfc3ac71d8ea0235235c0fb2347238&language=en-US`)
             setCast(res.data)
+            console.log(res.data, "cast")
            
             setLoading(true)
 
@@ -32,24 +33,30 @@ export const Cast = () => {
 
 
   return (
-    <div>casts
-      <Splide options={{
-                        perPage:5,
-                        arrows: false,
-                       // pagination: false,
+    <div className="container mx-auto ">
+      <h1 className="text-start sm:text-2xl lg:mx-0 mx-4 mt-4"> Casts </h1>
+      <div className="mx-4 lg:mx-0"> 
+          <Splide   options={{
+                        perPage:4,
+                        page:1,
+                     // arrows: true,
+                        pagination: false,
                         drag:"free",
-                        gap: "3rem"
+                       // gap: "1rem",
+                        autoplay:true,
 
                     }}>
            {
-            loading && moviecast.cast.map ((movieslist)=> (
-                <SplideSlide className="" key={movieslist.id}> 
+            loading && moviecast.cast.map ((casts)=> (
+                <SplideSlide className=" flex" key={casts.id}> 
                     
-                    <ul className="flex flex-col "> 
-                         <img className="h-8 w-8 rounded-full" src={IMAGE_PATH + movieslist.profile_path} />
-                         {/* <li className="">   {movieslist.name} </li> */}
+                  
+                         {/* <img className="h-12 w-12 mx-4 rounded-full" src={IMAGE_PATH + movieslist.profile_path} /> */}
+                        <div className="flex"> 
+                           <p className='text-sm' >{casts.name}</p> 
+                        </div>
                           
-                    </ul>
+               
                      
                      
                     
@@ -57,6 +64,7 @@ export const Cast = () => {
             ))
         }
       </Splide>
+      </div>
     </div>
   )
 }

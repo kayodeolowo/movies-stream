@@ -28,17 +28,22 @@ export const Trailer = () => {
 
 
   return (
-    <div>Trailer
+    <div className="container mx-auto mt-2">
+      <div> 
+          <h1 className="text-center mx-4 lg:mx-0 lg:mt-4 text-xl sm:text-2xl font-semibold text-yellow-500  "> Movie Clip </h1>
 
-        {setTrailer ? (
-              <ReactPlayer 
-                url={`https://www.youtube.com/watch?v=${trailer.key}`}
-                width="50%"
-                controls="true"
-              />
-            ) : (
-              <p>No Video Clip available for this movie  at the moment</p>
-            )}
+           <div className="w-11/12 mt-2 mx-auto"> 
+             {setTrailer ? (
+                  <ReactPlayer 
+                    url={`https://www.youtube.com/watch?v=${trailer.key}`}
+                    width="100%"
+                    controls="true"
+                  />
+                ) : (
+                  <p>No Video Clip available for this movie  at the moment</p>
+                )}
+           </div>
+        </div>
     </div>
   )
 }
