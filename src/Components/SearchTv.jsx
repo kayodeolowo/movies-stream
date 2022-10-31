@@ -6,13 +6,13 @@ import {ImSearch} from 'react-icons/im'
 
 
 
-export default function Search() {
+export default function SearchTv() {
     const [input, setInput] = useState("");
     const navigate = useNavigate();
 
     const submitInput = (e) => {
         e.preventDefault();
-        navigate('/searched/'+ input)
+        navigate('/searchedtv/'+ input)
     }
     //returns the inputed words back to url
 
@@ -25,7 +25,7 @@ export default function Search() {
               <input  className='w-full outline-none rounded-lg h-6 pl-2 sm:h-8'
               onChange={(e)=> setInput(e.target.value)}
                type="text" value={input}
-               placeholder="Search Movie"
+               placeholder="Search Series"
                 /> 
           </div>
       
@@ -36,4 +36,5 @@ export default function Search() {
 
   )
 }
+
 

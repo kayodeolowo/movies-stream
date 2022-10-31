@@ -14,7 +14,7 @@ const SimilarMovies = () => {
      const [similarMovies, setSimilarMovies] = useState([])
     const [loading, setLoading] = useState (false)
      const [currentpage, setCurrentpage] = useState(1)
-     const IMAGE_PATH = "https://image.tmdb.org/t/p/w342";
+     const IMAGE_PATH = "https://image.tmdb.org/t/p/w1280";
 
         const getSimilarmovies = async ()=> {
          try {
@@ -37,9 +37,9 @@ const SimilarMovies = () => {
   return (
     
 
-     <div className='container mx-auto pt-10 sm:pt-14  '>
+     <div className='container mx-auto pt-10 sm:pt-14 mb-10  '>
         <h1 className='text-white mx-3 sm:mx-6 lg:text-3xl '> Similar Movies for you </h1>
-    <div className='grid grid-cols-2 mt-2 gap-4 lg:mt-4 mx-3 sm:mx-6 lg:gap-10 t sm:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5 text-white '> 
+    <div className='grid grid-cols-2 mt-2 gap-4 lg:mt-4 mx-3 sm:mx-6 lg:gap-10 t sm:grid-cols-3 lg:grid-cols-3  xl:grid-cols-5 text-white '> 
 
           {
             loading && similarMovies.map ((movieslist)=> (

@@ -10,7 +10,7 @@ export const Cast = () => {
     let params = useParams();
      const [moviecast, setCast] = useState({});
      const [loading, setLoading] = useState (false)
-      const IMAGE_PATH = "https://image.tmdb.org/t/p/w342";
+      
    
 
      useEffect(()=> {

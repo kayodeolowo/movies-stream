@@ -6,11 +6,12 @@ import Moment from 'react-moment';
 import {TiStarFullOutline} from 'react-icons/ti'
 import Search from '../Components/Search';
 import {BsDot} from 'react-icons/bs'
+import SearchTv from '../Components/SearchTv';
 
 
 
 
-function Searched() {
+function Searchedtvshows() {
     const [searchedMovies, setSearchedMovies] = useState([]);
       const [loading, setLoading] = useState (false)
      const IMAGE_PATH = "https://image.tmdb.org/t/p/w1280";
@@ -18,7 +19,7 @@ function Searched() {
 
     const getSearched = async (name)=> {
          try {
-            const res = await axios.get (`https://api.themoviedb.org/3/search/movie?api_key=12cfc3ac71d8ea0235235c0fb2347238&query=${name}`)
+            const res = await axios.get (`https://api.themoviedb.org/3/search/tv?api_key=12cfc3ac71d8ea0235235c0fb2347238&query=${name}`)
             
             setSearchedMovies(res.data.results) 
             console.log(res.data.results, "search")
@@ -41,9 +42,9 @@ function Searched() {
 
       
         <h1 className='text-white mx-auto text-inherit sm:mx-6 text-xl mt-4 font-semibold text-center lg:text-start  '> <BsDot className='text-[#10141E]'> </BsDot> </h1>
-        <Search/>
+        <SearchTv/>
 
-         <h1 className='text-white mx-3 sm:mx-6 text-lg sm:text-xl mt-2 font-semibold text-center lg:text-start '> Searched Movies </h1>
+         <h1 className='text-white mx-3 sm:mx-6 text-lg sm:text-xl mt-2 font-semibold text-center lg:text-start '> Searched Series </h1>
       
           <div className='grid grid-cols-2 gap-4 mt-4 mx-3 sm:mx-6 lg:gap-10 t sm:grid-cols-3 lg:grid-cols-3  xl:grid-cols-5 text-white '> 
 
@@ -53,13 +54,13 @@ function Searched() {
 
                     
                 
-                    <Link to={ "/movie/"  + movieslist.id} > 
+                    <Link to={ "/series/"  + movieslist.id} > 
                      <img className='rounded-t-2xl w-full h-40  md:h-[280px] lg:h-[200px] cover' src={IMAGE_PATH + movieslist.poster_path} alt='' />
                     <div className='flex justify-between text-xs mt-2 mx-1 font-semibold'> 
                        <h1 className='flex text-gray-300'> <TiStarFullOutline className='text-yellow-400'></TiStarFullOutline>  {movieslist.vote_average}/10 </h1>  
                         <h1> <Moment  format='yyyy' >{movieslist.release_date}</Moment> </h1> 
                     </div>
-                      <h1 className='text-xs font-bold sm:mt-1 md:mt-2 mt-2 mx-1'>   {movieslist.title} </h1>
+                      <h1 className='text-xs font-bold sm:mt-1 md:mt-2 mt-2 mx-1'>   {movieslist.name} </h1>
                        
                      
                     </Link>
@@ -71,4 +72,4 @@ function Searched() {
   )
 }
 
-export default Searched 
+export default Searchedtvshows

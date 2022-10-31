@@ -2,27 +2,26 @@ import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import Moment from 'react-moment';
 import {TiStarFullOutline} from 'react-icons/ti'
-import {BsFillCaretRightFill,BsFillCaretLeftFill,BsDot} from 'react-icons/bs'
 import {Link } from 'react-router-dom'
+import {BsFillCaretRightFill,BsFillCaretLeftFill,BsDot} from 'react-icons/bs'
 import Search from '../Components/Search';
 
-
-const Popular = () => {
-    useEffect(()=> {
-        getPopularmovies()
+const Topratedmovies = () => {
+     useEffect(()=> {
+        getTopratedmovies()
     })
 
-    const [popularMovies, setPopularMovies] = useState([])
+    const [topratedMovies, setTopratedMovies] = useState([])
     const [loading, setLoading] = useState (false)
      const [currentpage, setCurrentpage] = useState(1)
      const IMAGE_PATH = "https://image.tmdb.org/t/p/w342";
-     
 
-    const getPopularmovies = async ()=> {
+     const getTopratedmovies = async ()=> {
          try {
-            const res = await axios.get (`https://api.themoviedb.org/3/movie/popular?api_key=12cfc3ac71d8ea0235235c0fb2347238&language=en-US&page=${currentpage}`)
-            setPopularMovies(res.data.results) 
-            console.log(res.data.results, "popular")
+            const res = await axios.get (`https://api.themoviedb.org/3/movie/top_rated?api_key=12cfc3ac71d8ea0235235c0fb2347238&language=en-US&page=${currentpage}`)
+            
+            setTopratedMovies(res.data.results) 
+            console.log(res.data.results, "top")
             setLoading(true)
 
         } catch (err) {
@@ -31,23 +30,18 @@ const Popular = () => {
     
     }
 
-  
-
-    
   return (
-
- 
-    
-     <div className='container mx-auto pt-2 sm:pt-6 '>
+    <div className='container mx-auto pt-2 sm:pt-6 '>
 
       
         <h1 className='text-white mx-auto text-inherit sm:mx-6 text-xl mt-4 font-semibold text-center lg:text-start  '> <BsDot className='text-[#10141E]'> </BsDot> </h1>
         <Search/>
 
-         <h1 className='text-white mx-3 sm:mx-6 text-lg sm:text-xl mt-2 font-semibold text-center lg:text-start '> Popular Movies </h1>
+         <h1 className='text-white mx-3 sm:mx-6 text-lg sm:text-xl mt-2 font-semibold text-center lg:text-start '> Toprated Movies </h1>
     <div className='grid grid-cols-2 mt-4 gap-4 mx-3 sm:mx-6 lg:gap-10  sm:grid-cols-3 lg:grid-cols-3  xl:grid-cols-5 text-white '> 
+
           {
-            loading && popularMovies.map ((movieslist)=> (
+            loading && topratedMovies.map ((movieslist)=> (
                 <div key={movieslist.id} className=" shadow-2xl  rounded-2xl bg-[#171E31]  h-[250px] sm:h-[240px] md:h-[350px] lg:h-[280px]  lg:w-[200px]"> 
 
                     
@@ -95,9 +89,7 @@ const Popular = () => {
              
         </div>
     </div>
-
-
   )
 }
 
-export default Popular
+export default Topratedmovies

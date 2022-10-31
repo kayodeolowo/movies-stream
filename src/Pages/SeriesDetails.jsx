@@ -7,24 +7,24 @@ import { Cast } from "../Components/Cast";
 import Moment from 'react-moment';
 import {FaDotCircle} from 'react-icons/fa'
 import SimilarMovies from "./SimilarMovies";
-import {RiEmotionSadLine} from 'react-icons/ri'
+import { SeriesTrailer } from "../Components/SeriesTrailer";
 
-const MoviesDetails = () => {
+const SeriesDetails = () => {
     let params = useParams();
 
      useEffect(()=> {
-         getMoviesdetails()
+         getSeriesdetails()
     })
 
-    const [moviesdetails, setMoviesdetails] = useState({});
+    const [seriesdetails, setseriesdetails] = useState({});
      const [loading, setLoading] = useState (false)
      const IMAGE_PATH = "https://image.tmdb.org/t/p/w1280";
 
-      const getMoviesdetails = async ()=> {
+      const getSeriesdetails = async ()=> {
          try {
-            const res = await axios.get (`https://api.themoviedb.org/3/movie/${params.name}?api_key=12cfc3ac71d8ea0235235c0fb2347238&language=en-US`)
-            setMoviesdetails(res.data) 
-            console.log(res.data, "moviedetails")
+            const res = await axios.get (`https://api.themoviedb.org/3/tv/${params.name}?api_key=12cfc3ac71d8ea0235235c0fb2347238&language=en-US`)
+            setseriesdetails(res.data) 
+            console.log(res.data, "seriesdetails")
            
             setLoading(true)
 
@@ -40,28 +40,21 @@ const MoviesDetails = () => {
     <div className="container mx-auto text-white  pt-10 sm:pt-14">
       <div className="lg:flex lg:flex-row  "> 
           <div className="lg:w-1/2 w-full mt-4 mx-auto"> 
-             {moviesdetails.poster_path ? ( <img className="h-80 sm:h-96 lg:h-[650px] mx-auto lg:mt-4 rounded-md" src={IMAGE_PATH + moviesdetails.poster_path} alt />
-             ) : (
-             <div className=""> 
-               <h1 className="flex text-red-500 justify-center mt-20 text-center text-xl sm:2xl "> Photo not Available <span>  <RiEmotionSadLine className="mt-1 ml-2 mx-auto w-fit justify-center"></RiEmotionSadLine> </span> </h1>  
-
-              
-                  
-               </div>      )}
+              <img className="h-80 sm:h-96 lg:h-[650px] mx-auto lg:mt-4 rounded-md" src={IMAGE_PATH + seriesdetails.poster_path} alt />
           </div>
               
             <div className="lg:w-1/2 mx-auto text-center lg:text-start  mt-4"> 
               
-              <h1 className="text-bold text-xl sm:text-3xl lg:text-5xl "> {moviesdetails.original_title} </h1>
-              <h1 className=" text-sm sm:text-xl lg:text-2xl mt-2 text-gray-400"> {moviesdetails.tagline} </h1>
+              <h1 className="text-bold text-xl sm:text-3xl lg:text-5xl "> {seriesdetails.original_name} </h1>
+              <h1 className=" text-sm sm:text-xl lg:text-2xl mt-2 text-gray-400"> {seriesdetails.tagline} </h1>
                 <div> 
                  
                   </div> 
                   <div className="flex flex-row space-x-1 mt-2 justify-center lg:justify-start text-sm mx-auto"> 
-                       <p> {moviesdetails.runtime} mins   </p>  
+                       <p> {seriesdetails.episode_run_time} mins   </p>  
                        <FaDotCircle className="mt-2 h-2 text-yellow-300 "> </FaDotCircle>         
                       {
-                    loading && moviesdetails.genres.map ((movieslist)=> (
+                    loading && seriesdetails.genres.map ((movieslist)=> (
                         <div className="" key={movieslist.id} > 
 
                               <p className="">   {movieslist.name} </p>
@@ -69,20 +62,22 @@ const MoviesDetails = () => {
                     ))
                 }
                  <FaDotCircle className="mt-2 h-2 text-yellow-300 "> </FaDotCircle> 
-                 <h2> <Moment format='yyyy'>{moviesdetails.release_date}</Moment>   </h2> 
+                 <h2> <Moment format='yyyy'>{seriesdetails.first_air_date}</Moment>   </h2> 
                 </div>
 
                 <div className="flex justify-between mx-4 text-gray-300 text-xs lg:justify-start lg:mx-0  "> 
-                  <h1 className="border-l-2 px-2 py-1 border-gray-600">Ratings: {moviesdetails.vote_average}/10 </h1>
-                 <h1 className=" border-l-2   px-2 py-1  border-gray-600">Lang: {moviesdetails.original_language} </h1> 
+                  <h1 className="border-l-2 px-2 py-1 border-gray-600">Ratings: {seriesdetails.vote_average}/10 </h1>
+                 <h1 className=" border-l-2   px-2 py-1  border-gray-600">Lang: {seriesdetails.original_language} </h1> 
               </div>
 
               <div className="text-start lg:mx-0 mx-4  mt-2"> 
                   <h1 className="text-xl sm:text-2xl lg:text-3xl "> Overview </h1>
-                  <p className="text-sm sm:text-base  text-gray-400">  {moviesdetails.overview}</p>
+                  <p className="text-sm sm:text-base  text-gray-400">  {seriesdetails.overview}</p>
               </div>
-               <Cast/>  
-               <Trailer/>
+               {/* <Cast/>  
+               <Trailer/> */}
+
+               <SeriesTrailer/>
               
            
             </div>
@@ -93,4 +88,4 @@ const MoviesDetails = () => {
   )
 }
 
-export default MoviesDetails
+export default SeriesDetails

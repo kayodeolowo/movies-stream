@@ -2,24 +2,27 @@ import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import Moment from 'react-moment';
 import {TiStarFullOutline} from 'react-icons/ti'
+import {BsFillCaretRightFill,BsFillCaretLeftFill,BsDot} from 'react-icons/bs'
 import {Link } from 'react-router-dom'
+import Search from '../Components/Search';
 
-const Topratedmovies = () => {
-     useEffect(()=> {
-        getTopratedmovies()
+
+const Homepopularmovies = () => {
+    useEffect(()=> {
+        getPopularmovies()
     })
 
-    const [topratedMovies, setTopratedMovies] = useState([])
+    const [popularMovies, setPopularMovies] = useState([])
     const [loading, setLoading] = useState (false)
      const [currentpage, setCurrentpage] = useState(1)
      const IMAGE_PATH = "https://image.tmdb.org/t/p/w342";
+     
 
-     const getTopratedmovies = async ()=> {
+    const getPopularmovies = async ()=> {
          try {
-            const res = await axios.get (`https://api.themoviedb.org/3/movie/top_rated?api_key=12cfc3ac71d8ea0235235c0fb2347238&language=en-US&page=${currentpage}`)
-            
-            setTopratedMovies(res.data.results) 
-            console.log(res.data.results, "top")
+            const res = await axios.get (`https://api.themoviedb.org/3/tv/popular?api_key=12cfc3ac71d8ea0235235c0fb2347238&language=en-US&page=${currentpage}`)
+            setPopularMovies(res.data.results) 
+            console.log(res.data.results, "popular")
             setLoading(true)
 
         } catch (err) {
@@ -28,13 +31,23 @@ const Topratedmovies = () => {
     
     }
 
-  return (
-    <div className='container mx-auto pt-10 sm:pt-14 '>
-        <h1 className='text-white mx-3 sm:mx-6 '> Toprated Movies </h1>
-    <div className='grid grid-cols-2 gap-4 mx-3 sm:mx-6 lg:gap-10 t sm:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5 text-white '> 
+  
 
+    
+  return (
+
+ 
+    
+     <div className='container mx-auto  '>
+
+      
+        <h1 className='text-white mx-auto text-inherit sm:mx-6 text-xl  font-semibold text-center lg:text-start  '> <BsDot className='text-[#10141E]'> </BsDot> </h1>
+       
+
+         <h1 className='text-white mx-3 sm:mx-6 text-lg sm:text-xl  font-semibold text-center lg:text-start '> Popular Series </h1>
+    <div className='grid grid-cols-2 mt-2 gap-4 mx-3 sm:mx-6 lg:gap-10  sm:grid-cols-3 lg:grid-cols-3  xl:grid-cols-5 text-white '> 
           {
-            loading && topratedMovies.map ((movieslist)=> (
+            loading && popularMovies.map ((movieslist)=> (
                 <div key={movieslist.id} className=" shadow-2xl  rounded-2xl bg-[#171E31]  h-[250px] sm:h-[240px] md:h-[350px] lg:h-[280px]  lg:w-[200px]"> 
 
                     
@@ -45,7 +58,7 @@ const Topratedmovies = () => {
                        <h1 className='flex text-gray-300'> <TiStarFullOutline className='text-yellow-400'></TiStarFullOutline>  {movieslist.vote_average}/10 </h1>  
                         <h1> <Moment  format='yyyy' >{movieslist.release_date}</Moment> </h1> 
                     </div>
-                      <h1 className='text-xs font-bold sm:mt-1 md:mt-2 mt-2 mx-1'>   {movieslist.title} </h1>
+                      <h1 className='text-xs font-bold sm:mt-1 md:mt-2 mt-2 mx-1'>   {movieslist.name} </h1>
                        
                      
                     </Link>
@@ -58,30 +71,33 @@ const Topratedmovies = () => {
 
 
 
-         <div> 
+         <div className='flex text-white justify-center mt-4 space-x-4 mb-10'> 
 
-         <button onClick={ ()=> {
+         <button  onClick={ ()=> {
               if (currentpage ===1) {
                    return;
                   } else {
                     setCurrentpage (currentpage -1 );
                           }
                          }} > 
-                        Previous
+                        <BsFillCaretLeftFill className='text-yellow-300 font-bold text-2xl sm:text-3xl'> </BsFillCaretLeftFill>
               </button> 
+                            <h2 className='mt-1'> {currentpage} </h2>
 
                <button onClick={()=>setCurrentpage(currentpage+1)}  > 
-                        Next
+                        <BsFillCaretRightFill className='text-yellow-300 font-bold text-2xl sm:text-3xl'> </BsFillCaretRightFill>
               </button>    
 
-              <h2> {currentpage} </h2>
+            
 
               
 
              
         </div>
     </div>
+
+
   )
 }
 
-export default Topratedmovies
+export default Homepopularmovies
