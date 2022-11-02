@@ -48,14 +48,19 @@ const Popular = () => {
     <div className='grid grid-cols-2 mt-4 gap-4 mx-3 sm:mx-6 lg:gap-10  sm:grid-cols-3 lg:grid-cols-3  xl:grid-cols-5 text-white '> 
           {
             loading && popularMovies.map ((movieslist)=> (
-                <div key={movieslist.id} className=" shadow-2xl  rounded-2xl bg-[#171E31]  h-[250px] sm:h-[240px] md:h-[350px] lg:h-[280px]  lg:w-[200px]"> 
+                <div key={movieslist.id} className=" shadow-2xl  rounded-2xl bg-[#171E31]  h-[300px] sm:h-[240px] md:h-[350px] lg:h-[280px]  lg:w-[200px]"> 
 
                     
                 
                     <Link to={"/movie/" + movieslist.id} > 
-                     <img className='rounded-t-2xl w-full h-40  md:h-[280px] lg:h-[200px] cover' src={IMAGE_PATH + movieslist.poster_path} alt='' />
+                     <img className='rounded-t-2xl w-full sm:h-40 h-52  md:h-[280px] lg:h-[200px] cover' src={IMAGE_PATH + movieslist.poster_path} alt='' />
                     <div className='flex justify-between text-xs mt-2 mx-1 font-semibold'> 
-                       <h1 className='flex text-gray-300'> <TiStarFullOutline className='text-yellow-400'></TiStarFullOutline>  {movieslist.vote_average}/10 </h1>  
+                       {movieslist.vote_average > 5 ? 
+                    (
+                             <h1 className='flex text-gray-300 font-bold'> <TiStarFullOutline className='text-yellow-400 mt-0.5'></TiStarFullOutline> <span className='text-green-600'> {movieslist.vote_average}</span>/10 </h1> 
+                    ) : (
+                       <h1 className='flex text-gray-300 font-bold'> <TiStarFullOutline className='text-yellow-400 mt-0.5'></TiStarFullOutline> <span className='text-red-600'> {movieslist.vote_average}</span>/10 </h1> 
+                    )  }
                         <h1> <Moment  format='yyyy' >{movieslist.release_date}</Moment> </h1> 
                     </div>
                       <h1 className='text-xs font-bold sm:mt-1 md:mt-2 mt-2 mx-1'>   {movieslist.title} </h1>

@@ -49,6 +49,8 @@ const MoviesDetails = () => {
                   
                </div>      )}
           </div>
+
+          
               
             <div className="lg:w-1/2 mx-auto text-center lg:text-start  mt-4"> 
               
@@ -57,9 +59,9 @@ const MoviesDetails = () => {
                 <div> 
                  
                   </div> 
-                  <div className="flex flex-row space-x-1 mt-2 justify-center lg:justify-start text-sm mx-auto"> 
+                  <div className="flex flex-row space-x-1 mt-2 justify-center lg:justify-start text-xs sm:text-sm mx-auto"> 
                        <p> {moviesdetails.runtime} mins   </p>  
-                       <FaDotCircle className="mt-2 h-2 text-yellow-300 "> </FaDotCircle>         
+                       <FaDotCircle className=" mt-1.5 h-1 sm:h-2 text-yellow-300 "> </FaDotCircle>         
                       {
                     loading && moviesdetails.genres.map ((movieslist)=> (
                         <div className="" key={movieslist.id} > 
@@ -68,12 +70,23 @@ const MoviesDetails = () => {
                         </div>
                     ))
                 }
-                 <FaDotCircle className="mt-2 h-2 text-yellow-300 "> </FaDotCircle> 
+                 <FaDotCircle className="mt-1.5 h-1 sm:h-2 text-yellow-300 "> </FaDotCircle> 
                  <h2> <Moment format='yyyy'>{moviesdetails.release_date}</Moment>   </h2> 
                 </div>
 
-                <div className="flex justify-between mx-4 text-gray-300 text-xs lg:justify-start lg:mx-0  "> 
-                  <h1 className="border-l-2 px-2 py-1 border-gray-600">Ratings: {moviesdetails.vote_average}/10 </h1>
+                <div className="flex justify-between mt-1 mx-4 text-gray-300 text-sm  lg:justify-start lg:mx-0  "> 
+
+
+                  {moviesdetails.vote_average > 5 ? (
+
+                  <h1 className="border-l-2 font-semibold px-2 py-1  border-gray-600"><span className="font-normal"> Ratings:</span>   <span className="text-green-500"> {moviesdetails.vote_average} </span>/ 10 </h1> ) : (
+                      <h1 className="border-l-2 px-2 py-1  font-semibold border-gray-600"> <span className="font-normal"> Ratings: </span> <span className="text-red-600"> {moviesdetails.vote_average} </span>/ 10 </h1>
+                  )}
+
+
+
+
+
                  <h1 className=" border-l-2   px-2 py-1  border-gray-600">Lang: {moviesdetails.original_language} </h1> 
               </div>
 

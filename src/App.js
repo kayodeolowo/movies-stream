@@ -1,8 +1,7 @@
 
 import { BrowserRouter,Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
-import Search from "./Components/Search";
-import Footer from "./Pages/Footer";
+
 import { Pages } from "./Pages/Pages";
 import Popular from "./Pages/Popular";
 import Popularseries from "./Pages/Popularseries";
@@ -27,7 +26,7 @@ function App() {
         <Route path='popular-series' element={<Popularseries/>} />
         <Route path='toprated-series' element={<Topratedseries/>} />
       </Routes>
-      <Footer/>
+    
        </div>
 
     

@@ -49,7 +49,12 @@ const Hometopratedmovies = () => {
                     <Link to={"/movie/" + movieslist.id} > 
                      <img className='rounded-t-2xl w-full h-40  md:h-[280px] lg:h-[200px] cover' src={IMAGE_PATH + movieslist.poster_path} alt='' />
                     <div className='flex justify-between text-xs mt-2 mx-1 font-semibold'> 
-                       <h1 className='flex text-gray-300'> <TiStarFullOutline className='text-yellow-400'></TiStarFullOutline>  {movieslist.vote_average}/10 </h1>  
+                       {movieslist.vote_average > 5 ? 
+                    (
+                             <h1 className='flex text-gray-300 font-bold'> <TiStarFullOutline className='text-yellow-400 mt-0.5'></TiStarFullOutline> <span className='text-green-600'> {movieslist.vote_average}</span>/10 </h1> 
+                    ) : (
+                       <h1 className='flex text-gray-300 font-bold'> <TiStarFullOutline className='text-yellow-400 mt-0.5'></TiStarFullOutline> <span className='text-red-600'> {movieslist.vote_average}</span>/10 </h1> 
+                    )  }
                         <h1> <Moment  format='yyyy' >{movieslist.release_date}</Moment> </h1> 
                     </div>
                       <h1 className='text-xs font-bold sm:mt-1 md:mt-2 mt-2 mx-1'>   {movieslist.title} </h1>
