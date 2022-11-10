@@ -30,7 +30,7 @@ export const Trailer = () => {
   return (
     <div className="container mx-auto mt-2">
       <div> 
-          <h1 className="text-center mx-4 lg:mx-0 lg:mt-4 text-xl sm:text-2xl font-semibold text-yellow-500  "> Movie Clip </h1>
+          <h1 className="text-center mx-4 lg:mx-0 lg:mt-4 text-xl sm:text-2xl font-bold text-yellow-500  "> Movie Clip </h1>
 
            <div className="w-11/12 mt-2 mx-auto"> 
              {trailer ? (

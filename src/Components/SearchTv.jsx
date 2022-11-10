@@ -22,7 +22,7 @@ export default function SearchTv() {
          <div className='flex'> 
                
         
-              <input  className='w-full outline-none rounded-lg h-6 pl-2 sm:h-8'
+              <input  className='w-full outline-none rounded-lg text-black h-6 pl-2 sm:h-8'
               onChange={(e)=> setInput(e.target.value)}
                type="text" value={input}
                placeholder="Search Series"

@@ -3,6 +3,7 @@ import { FaSearch } from 'react-icons/fa'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {ImSearch} from 'react-icons/im'
+import { Theme } from './Theme'
 
 
 
@@ -17,12 +18,13 @@ export default function Search() {
     //returns the inputed words back to url
 
   return (
-    <div className='container w-1/2  mx-auto rounded-lg'> 
+    
+    <div className='container w-1/2   mx-auto rounded-lg'> 
    <form onSubmit={submitInput}  className='w-full  '>
          <div className='flex'> 
                
         
-              <input  className='w-full outline-none rounded-lg h-6 pl-2 sm:h-8'
+              <input  className='w-full outline-none text-black rounded-lg h-6 pl-2 sm:h-8'
               onChange={(e)=> setInput(e.target.value)}
                type="text" value={input}
                placeholder="Search Movie"
@@ -32,6 +34,7 @@ export default function Search() {
      </form> 
 
      </div>
+     
    
 
   )

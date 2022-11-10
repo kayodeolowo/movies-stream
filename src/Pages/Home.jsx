@@ -19,7 +19,7 @@ import Upcomingmovies from './Upcomingmovies'
 
 const Home = () => {
   return (
-    <div className=' '>
+    <div className='  '>
        
 
         

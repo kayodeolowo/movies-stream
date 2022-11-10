@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Moment from 'react-moment';
 import {TiStarFullOutline} from 'react-icons/ti'
 import {Link } from 'react-router-dom'
+import { CardTheme, Theme } from "../Components/Theme";
 
 const SimilarMovies = () => {
 
@@ -36,14 +37,15 @@ const SimilarMovies = () => {
 
   return (
     
-
-     <div className='container mx-auto pt-10 sm:pt-14 mb-10  '>
-        <h1 className='text-white mx-3 sm:mx-6 lg:text-3xl '> Similar Movies for you </h1>
+    <Theme> 
+     <div className='container mx-auto pt-10 sm:pt-14 pb-10  '>
+        <h1 className=' mx-3 sm:mx-6 lg:text-3xl '> Similar Movies for you </h1>
     <div className='grid grid-cols-2 mt-2 gap-4 lg:mt-4 mx-3 sm:mx-6 lg:gap-10 t sm:grid-cols-3 lg:grid-cols-3  xl:grid-cols-5 text-white '> 
 
           {
             loading && similarMovies.map ((movieslist)=> (
-                <div key={movieslist.id} className=" shadow-2xl  rounded-2xl bg-[#171E31]  h-[300px] sm:h-[240px] md:h-[350px] lg:h-[280px]  lg:w-[200px]"> 
+                <CardTheme> 
+                <div key={movieslist.id} className=" shadow-2xl  rounded-2xl  h-[300px] sm:h-[240px] md:h-[350px] lg:h-[280px]  lg:w-[200px]"> 
 
                     
                 
@@ -63,6 +65,7 @@ const SimilarMovies = () => {
                      
                     </Link>
                 </div>
+                </CardTheme>
             ))
         }
     </div>
@@ -73,6 +76,7 @@ const SimilarMovies = () => {
 
         
     </div>
+    </Theme>
   )
 }
 

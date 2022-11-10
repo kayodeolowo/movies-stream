@@ -6,6 +6,7 @@ import Moment from 'react-moment';
 import {TiStarFullOutline} from 'react-icons/ti'
 import Search from '../Components/Search';
 import {BsDot} from 'react-icons/bs'
+import { CardTheme, Theme } from '../Components/Theme';
 
 
 
@@ -37,19 +38,21 @@ function Searched() {
     },[params.search]);
 
   return (
-     <div className='container mx-auto pt-2 sm:pt-6 '>
+    <Theme> 
+           <div className='container mx-auto pt-2 sm:pt-6 '>
 
       
-        <h1 className='text-white mx-auto text-inherit sm:mx-6 text-xl mt-4 font-semibold text-center lg:text-start  '> <BsDot className='text-[#10141E]'> </BsDot> </h1>
+        <h1 className=' mx-auto text-inherit sm:mx-6 text-xl mt-4 font-semibold text-center lg:text-start  text-[0px] '> <BsDot className='text-white  text-[0px]'> </BsDot> </h1>
         <Search/>
 
-         <h1 className='text-white mx-3 sm:mx-6 text-lg sm:text-xl mt-2 font-semibold text-center lg:text-start '> Searched Movies </h1>
+         <h1 className=' mx-3 sm:mx-6 text-lg sm:text-xl mt-2 font-semibold text-center lg:text-start '> Searched Movies </h1>
       
           <div className='grid grid-cols-2 gap-4 mt-4 mx-3 sm:mx-6 lg:gap-10 t sm:grid-cols-3 lg:grid-cols-3  xl:grid-cols-5 text-white '> 
 
           {
             loading && searchedMovies.map ((movieslist)=> (
-                <div key={movieslist.id} className=" shadow-2xl  rounded-2xl bg-[#171E31]  h-[300px] sm:h-[240px] md:h-[350px] lg:h-[280px]  lg:w-[200px]"> 
+              <CardTheme>
+                <div key={movieslist.id} className=" shadow-2xl  rounded-2xl  h-[300px] sm:h-[240px] md:h-[350px] lg:h-[280px]  lg:w-[200px]"> 
 
                     
                 
@@ -69,10 +72,13 @@ function Searched() {
                      
                     </Link>
                 </div>
+              </CardTheme>
             ))
         }
     </div>
     </div>
+    </Theme>
+
   )
 }
 

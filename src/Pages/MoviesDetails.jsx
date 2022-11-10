@@ -8,6 +8,7 @@ import Moment from 'react-moment';
 import {FaDotCircle} from 'react-icons/fa'
 import SimilarMovies from "./SimilarMovies";
 import {RiEmotionSadLine} from 'react-icons/ri'
+import { Theme } from "../Components/Theme";
 
 const MoviesDetails = () => {
     let params = useParams();
@@ -36,8 +37,10 @@ const MoviesDetails = () => {
 
 
 
+
   return (
-    <div className="container mx-auto text-white  pt-10 sm:pt-14">
+  <Theme>
+    <div className="container mx-auto   pt-10 sm:pt-14">
       <div className="lg:flex lg:flex-row  "> 
           <div className="lg:w-1/2 w-full mt-4 mx-auto"> 
              {moviesdetails.poster_path ? ( <img className="h-80 sm:h-96 lg:h-[650px] mx-auto lg:mt-4 rounded-md" src={IMAGE_PATH + moviesdetails.poster_path} alt />
@@ -102,7 +105,7 @@ const MoviesDetails = () => {
         </div>
          <SimilarMovies/>
     </div>
-    
+  </Theme>
   )
 }
 

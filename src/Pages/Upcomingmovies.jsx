@@ -5,6 +5,7 @@ import {TiStarFullOutline} from 'react-icons/ti'
 import {Link } from 'react-router-dom'
 import {BsFillCaretRightFill,BsFillCaretLeftFill,BsDot} from 'react-icons/bs'
 import Search from '../Components/Search';
+import { CardTheme, Theme } from '../Components/Theme';
 
 
 const Upcomingmovies = () => {
@@ -36,19 +37,21 @@ const Upcomingmovies = () => {
 
 
   return (
+    <Theme>
        <div className='container mx-auto pt-2 sm:pt-6 '>
 
       
-        <h1 className='text-white mx-auto text-inherit sm:mx-6 text-xl mt-4 font-semibold text-center lg:text-start  '> <BsDot className='text-[#10141E]'> </BsDot> </h1>
+        <h1 className='text-white mx-auto text-inherit sm:mx-6 text-xl mt-4 font-semibold text-center lg:text-start  '> <BsDot className='text-[#10141E] text-[0px]'> </BsDot> </h1>
         <Search/>
 
-         <h1 className='text-white mx-3 sm:mx-6 text-lg sm:text-xl mt-2 font-semibold text-center lg:text-start '> Upcoming Movies </h1>
+         <h1 className=' mx-3 sm:mx-6 text-lg sm:text-xl mt-2 font-semibold text-center lg:text-start '> Upcoming Movies </h1>
        
     <div className='grid grid-cols-2 mt-4 gap-4 mx-3 sm:mx-6 lg:gap-10  sm:grid-cols-3 lg:grid-cols-3  xl:grid-cols-5 text-white '> 
         
           {
             loading && upcomingMovies.map ((movieslist)=> (
-                <div key={movieslist.id} className="  shadow-2xl  rounded-2xl bg-[#171E31]  h-[300px] sm:h-[240px] md:h-[350px] lg:h-[280px]  lg:w-[200px]"> 
+              <CardTheme> 
+                <div key={movieslist.id} className="  shadow-2xl  rounded-2xl  h-[300px] sm:h-[240px] md:h-[350px] lg:h-[280px]  lg:w-[200px]"> 
 
                     
                 
@@ -75,6 +78,7 @@ const Upcomingmovies = () => {
                      
                     </Link>
                 </div>
+                </CardTheme>
             ))
         }
     </div>
@@ -84,7 +88,7 @@ const Upcomingmovies = () => {
 
 
           
- <div className='flex text-white justify-center mt-4 space-x-4 mb-10'> 
+ <div className='flex  justify-center mt-4 space-x-4 pb-10'> 
 
          <button  onClick={ ()=> {
               if (currentpage ===1) {
@@ -105,6 +109,7 @@ const Upcomingmovies = () => {
              
         </div> 
     </div>
+    </Theme>
   )
 }
 

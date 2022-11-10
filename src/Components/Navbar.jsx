@@ -7,6 +7,8 @@ import {MdOutlineStarRate} from 'react-icons/md'
 import {MdOutlineWbIncandescent} from 'react-icons/md'
 import {FcHome} from 'react-icons/fc'
 import SearchTv from './SearchTv';
+import ThemeSwitch from '../Components/ThemeSwitch';
+
 
 
 
@@ -22,8 +24,8 @@ const Navbar = () => {
 
 
     return (
-        <div className="flex flex-col container mx-auto justify-start   items-start lg:h-[450px]   fixed lg:w-32 lg:ml-6 xl:ml-10  rounded-lg xl:mt-[16%]   lg:mt-[12%]  lg:px-2 
-          text-white font-public   z-10 lg:bg-[#171E31] "> 
+        <div className="flex flex-col container mx-auto justify-start   items-start lg:h-[460px]   fixed lg:w-32 lg:ml-6 xl:ml-10  rounded-lg xl:mt-[16%]   lg:mt-[10%]  lg:px-2 
+          text-white font-public   z-10 lg:bg-[#171E31]  "> 
           
         
                     {/* <div className='' >
@@ -31,11 +33,14 @@ const Navbar = () => {
                       <img src='./image/logo.png'/>
                 
                      </div>  */}
-
+                       <div className='w-fit mx-auto hidden lg:flex mt-2'> 
+                         <ThemeSwitch/>
+                       </div>
                      <div className='lg:flex   '> 
+                    
                         <ul className=' lg:text-lg font-bold hidden   lg:flex lg:flex-col text-white font-mono   '> 
                         
-                                <Link to='/'  className=' hover:text-[#E0A040] ml-1 duration-200  mt-6  flex justify-center border-b-2  text-yellow-500'  >   Movies  <FcHome className='mt-1 ml-1'> </FcHome>    </Link>
+                                <Link to='/'  className=' hover:text-[#E0A040] ml-1 duration-200  mt-2  flex justify-center border-b-2  text-yellow-500'  >   Movies  <FcHome className='mt-1 ml-1'> </FcHome>    </Link>
                             <Link to='/popular-movies'  className=' hover:text-[#E0A040] flex duration-200 mt-3 ' >   Popular <FaHotjar className='text-sm mt-2 ml-1 text-red-500'></FaHotjar>  </Link>
                             <Link to='/toprated-movies' className='flex hover:text-[#E0A040]  duration-200 mt-3 ' >    TopRated <MdOutlineStarRate className='ml-1 mt-1 text-blue-500'> </MdOutlineStarRate>    </Link>
                             <Link to='/Upcoming-movies' className=' hover:text-[#E0A040]  flex duration-200 mt-3' >     Upcoming <MdOutlineWbIncandescent className='mt-2 ml-1 text-yellow-400'> </MdOutlineWbIncandescent>  </Link>    
@@ -77,10 +82,13 @@ const Navbar = () => {
             </div>
 
 
-             <div   onClick={handleNav} className={nav ? ' leading-loose text-center text-2xl rounded-lg absolute text-white  left-0 top-0    w-1/2 m-auto z-10    flex h-screen    bg-[#171E31]  duration-100 flex-col' : 'absolute left-[-100%] '}>
+             <div   onClick={handleNav} className={nav ? ' leading-loose text-center text-2xl rounded-l-bg absolute text-white  left-0 top-0    w-1/2 m-auto z-10    flex h-screen    bg-[#171E31]  duration-100 flex-col' : 'absolute left-[-100%] '}>
               <div > 
-                    <ul data-aos="fade-up"  className='lg:hidden ml-4  font-semibold mt-10 font-fira  flex flex-col '>
-                      <Link to='/'  className=' flex text-yellow-500 justify-center duration-200 t mt-6  border-b-2 '  >   Movies  <FcHome className='mt-3 ml-1'> </FcHome>    </Link>
+                 <div className='w-fit mx-auto  mt-20'> 
+                         <ThemeSwitch/>
+                   </div>
+                    <ul data-aos="fade-up"  className='lg:hidden ml-4  font-semibold mt-2 font-fira  flex flex-col '>
+                      <Link to='/'  className=' flex text-yellow-500 justify-center duration-200  mt-6  border-b-2 '  >   Movies  <FcHome className='mt-3 ml-1'> </FcHome>    </Link>
                             <Link to='/popular-movies'  className='  flex duration-200 mt-3 ' >   Popular <FaHotjar className='text-sm mt-5 ml-1 text-red-500'></FaHotjar>  </Link>
                             <Link to='/toprated-movies' className='flex   duration-200 mt-3 ' >    TopRated <MdOutlineStarRate className='ml-1 mt-3 text-blue-500'> </MdOutlineStarRate>    </Link>
                             <Link to='/Upcoming-movies' className='   flex duration-200 mt-3' >     Upcoming <MdOutlineWbIncandescent className='mt-3 ml-1 text-yellow-400'> </MdOutlineWbIncandescent>  </Link>    
