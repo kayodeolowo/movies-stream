@@ -38,21 +38,21 @@ const Topratedseries = () => {
    <div className='container mx-auto pt-2 sm:pt-6 '>
 
       
-        <h1 className=' mx-auto text-inherit sm:mx-6 text-xl mt-4 font-semibold text-center lg:text-start  '> <BsDot className='text-[0px]'> </BsDot> </h1>
+        <h1 className=' mx-auto text-inherit sm:mx-6 text-xl mt-4 font-semibold text-center lg:text-start  '> <BsDot className='text-[3px]'> </BsDot> </h1>
         <SearchTv/>
 
          <h1 className=' mx-3 sm:mx-6 text-lg sm:text-xl mt-2 font-semibold text-center lg:text-start '> Toprated Series </h1>
-    <div className='grid grid-cols-2 mt-4 gap-4 mx-3 sm:mx-6 lg:gap-10  sm:grid-cols-3 lg:grid-cols-3  xl:grid-cols-5 text-white '> 
+    <div className='grid grid-cols-2 mt-4 gap-4 mx-3  lg:gap-10  sm:grid-cols-3 lg:grid-cols-3  xl:grid-cols-5 text-white sm:gap-6 '> 
 
           {
             loading && topratedseries.map ((serieslist)=> (
               <CardTheme>
-                <div key={serieslist.id} className=" shadow-2xl  rounded-2xl   h-[300px] sm:h-[240px] md:h-[350px] lg:h-[280px]  lg:w-[200px]"> 
+                <div key={serieslist.id} className=" shadow-2xl  rounded-2xl   h-[16.5rem] w-[9rem] sm:h-[18rem] sm:w-[9rem] md:w-[12rem] md:h-[22rem] mx-auto lg:h-[280px]  lg:w-[200px]"> 
 
                     
                 
                     <Link to={"/series/" + serieslist.id} > 
-                     <img className='rounded-t-2xl w-full sm:h-40 h-52  md:h-[280px] lg:h-[200px] cover' src={IMAGE_PATH + serieslist.poster_path} alt='' />
+                     <img className='rounded-t-2xl w-full sm:h-[13rem] h-[12rem]  md:h-[280px] lg:h-[200px] cover' src={IMAGE_PATH + serieslist.poster_path} alt='' />
                     <div className='flex justify-between text-xs mt-2 mx-1 font-semibold'> 
                       {serieslist.vote_average > 5 ? 
                     (

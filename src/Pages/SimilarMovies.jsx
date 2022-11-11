@@ -40,17 +40,17 @@ const SimilarMovies = () => {
     <Theme> 
      <div className='container mx-auto pt-10 sm:pt-14 pb-10  '>
         <h1 className=' mx-3 sm:mx-6 lg:text-3xl '> Similar Movies for you </h1>
-    <div className='grid grid-cols-2 mt-2 gap-4 lg:mt-4 mx-3 sm:mx-6 lg:gap-10 t sm:grid-cols-3 lg:grid-cols-3  xl:grid-cols-5 text-white '> 
+    <div className='grid grid-cols-2 mt-4 gap-4 mx-3  lg:gap-10  sm:grid-cols-3 lg:grid-cols-3  xl:grid-cols-5 text-white sm:gap-6 '> 
 
           {
             loading && similarMovies.map ((movieslist)=> (
                 <CardTheme> 
-                <div key={movieslist.id} className=" shadow-2xl  rounded-2xl  h-[300px] sm:h-[240px] md:h-[350px] lg:h-[280px]  lg:w-[200px]"> 
+                <div key={movieslist.id} className=" shadow-2xl  rounded-2xl   h-[16.5rem] w-[9rem] sm:h-[18rem] sm:w-[9rem] md:w-[12rem] md:h-[22rem] mx-auto lg:h-[280px]  lg:w-[200px]"> 
 
                     
                 
                     <Link to={"/movie/" + movieslist.id} > 
-                     <img className='rounded-t-2xl w-full sm:h-40  md:h-[280px] lg:h-[200px] cover' src={IMAGE_PATH + movieslist.poster_path} alt='' />
+                     <img className='rounded-t-2xl w-full sm:h-[13rem] h-[12rem]  md:h-[280px] lg:h-[200px] cover' src={IMAGE_PATH + movieslist.poster_path} alt='' />
                     <div className='flex justify-between text-xs mt-2 mx-1 font-semibold'> 
                         {movieslist.vote_average > 5 ? 
                     (
