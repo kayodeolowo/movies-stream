@@ -52,7 +52,7 @@ function Searched() {
           {
             loading && searchedMovies.map ((movieslist)=> (
               <CardTheme>
-                <div key={movieslist.id} className=" shadow-2xl  rounded-2xl   h-[16.5rem] w-[9rem] sm:h-[18rem] sm:w-[9rem] md:w-[12rem] md:h-[22rem] mx-auto lg:h-[280px]  lg:w-[200px]"> 
+                <div key={movieslist.id} className=" shadow-2xl  rounded-2xl   h-[17.5rem] w-[9rem] sm:h-[18rem] sm:w-[9rem] md:w-[12rem] md:h-[22rem] mx-auto lg:h-[280px]  lg:w-[200px]"> 
 
                     
                 

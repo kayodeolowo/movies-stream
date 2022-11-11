@@ -24,7 +24,7 @@ export default function Search() {
          <div className='flex'> 
                
         
-              <input  className='w-full outline-none text-black rounded-lg h-6 pl-2 sm:h-8'
+              <input  className='w-full text-center outline-none text-black rounded-lg h-6 pl-2 sm:h-8'
               onChange={(e)=> setInput(e.target.value)}
                type="text" value={input}
                placeholder="Search Movie"

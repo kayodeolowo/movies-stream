@@ -77,7 +77,7 @@ const Navbar = () => {
         
             {/* hamburger */} 
             <div   onClick={handleNav} className=' lg:hidden z-10 '> 
-            {nav ? <AiOutlineClose className='text-[#E0A040] ' size={32}/> :   <BiMenuAltLeft className='text-[#E0A040] sm:text-5xl text-3xl mt-4 ml-4 ' />}
+            {nav ? <AiOutlineClose className='text-[#E0A040] ' size={32}/> :   <BiMenuAltLeft className='text-[#E0A040] sm:text-5xl text-4xl mt-4 ml-4 ' />}
               
             </div>
 
@@ -100,8 +100,8 @@ const Navbar = () => {
 
                             <Link to='toprated-series' className='  flex mt-3 duration-200' >     TopRated <MdOutlineStarRate className='ml-1 mt-3 text-blue-500'> </MdOutlineStarRate>  </Link>  
 
-                              <h1 className='text-gray-300 text-base mt-[48%] sm:mt-[170%]'> © Kayode Olowo </h1>
-                             <p className='text-gray-500 text-sm '>  <a href='https://themoviedb.org/documentation/api'>Themoviedb</a>  </p>
+                              <h1 className='text-gray-300 text-base mt-[48%] sm:mt-[100%] md:mt-[90%]'> <a href='https://kayodeolowo.netlify.app/'> © Kayode Olowo </a>  </h1>
+                             <p className='text-gray-500 text-sm  mt-6'>  <a href='https://themoviedb.org/documentation/api'>Themoviedb</a>  </p>
 
                               
 

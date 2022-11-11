@@ -36,7 +36,8 @@ const Topratedmovies = () => {
     <div className='container mx-auto pt-2 sm:pt-6 '>
 
       
-        <h1 className='text-white mx-auto text-inherit sm:mx-6 text-xl mt-4 font-semibold text-center lg:text-start  '> <BsDot className='text-[#10141E] text-[3px]'> </BsDot> </h1>
+        <h1 className=' mx-auto text-inherit sm:mx-6 text-xl mt-4 font-semibold text-center lg:text-start  '> <BsDot className=' text-white
+ dark:text-gray-800'> </BsDot> </h1>
         <Search/>
 
          <h1 className=' mx-3 sm:mx-6 text-lg sm:text-xl mt-2 font-semibold text-center lg:text-start '> Toprated Movies </h1>
@@ -45,7 +46,7 @@ const Topratedmovies = () => {
           {
             loading && topratedMovies.map ((movieslist)=> (
               <CardTheme>
-                <div key={movieslist.id} className=" shadow-2xl  rounded-2xl   h-[16.5rem] w-[9rem] sm:h-[18rem] sm:w-[9rem] md:w-[12rem] md:h-[22rem] mx-auto lg:h-[280px]  lg:w-[200px]"> 
+                <div key={movieslist.id} className=" shadow-2xl  rounded-2xl   h-[17.5rem] w-[9rem] sm:h-[18rem] sm:w-[9rem] md:w-[12rem] md:h-[22rem] mx-auto lg:h-[280px]  lg:w-[200px]"> 
 
                     
                 
