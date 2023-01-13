@@ -27,7 +27,7 @@ const  Popularseries = () => {
          try {
             const res = await axios.get (`https://api.themoviedb.org/3/tv/popular?api_key=12cfc3ac71d8ea0235235c0fb2347238&language=en-US&page=${currentpage}`)
             setPopularseries(res.data.results) 
-            console.log(res.data.results, "seriespop")
+         //   console.log(res.data.results, "seriespop")
             setLoading(true)
 
         } catch (err) {
@@ -51,8 +51,8 @@ const  Popularseries = () => {
 
           {
             loading && Popularseries.map ((serieslist)=> (
-            <CardTheme>
-                <div key={serieslist.id} className="  shadow-2xl  rounded-2xl   h-[17.5rem] w-[9rem] sm:h-[18rem] sm:w-[9rem] md:w-[12rem] md:h-[22rem] mx-auto lg:h-[280px]  lg:w-[200px]"> 
+            <CardTheme key={serieslist.id}>
+                <div  className="  shadow-2xl  rounded-2xl   h-[17.5rem] w-[9rem] sm:h-[18rem] sm:w-[9rem] md:w-[12rem] md:h-[22rem] mx-auto lg:h-[280px]  lg:w-[200px]"> 
 
                     
                 

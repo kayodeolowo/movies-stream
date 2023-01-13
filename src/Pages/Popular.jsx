@@ -23,7 +23,7 @@ const Popular = () => {
          try {
             const res = await axios.get (`https://api.themoviedb.org/3/movie/popular?api_key=12cfc3ac71d8ea0235235c0fb2347238&language=en-US&page=${currentpage}`)
             setPopularMovies(res.data.results) 
-            console.log(res.data.results, "popular")
+           // console.log(res.data.results, "popular")
             setLoading(true)
 
         } catch (err) {
@@ -51,9 +51,9 @@ const Popular = () => {
        <div className='grid grid-cols-2 mt-4 gap-4 mx-3  lg:gap-10  sm:grid-cols-3 lg:grid-cols-3  xl:grid-cols-5 text-white sm:gap-6 '> 
           {
             loading && popularMovies.map ((movieslist)=> (
-              <CardTheme>
+              <CardTheme key={movieslist.id}>
  
-                <div key={movieslist.id} className=" shadow-2xl  rounded-2xl   h-[17.5rem] w-[9rem] sm:h-[18rem] sm:w-[9rem] md:w-[12rem] md:h-[22rem] mx-auto lg:h-[280px]  lg:w-[200px]"> 
+                <div  className=" shadow-2xl  rounded-2xl   h-[17.5rem] w-[9rem] sm:h-[18rem] sm:w-[9rem] md:w-[12rem] md:h-[22rem] mx-auto lg:h-[280px]  lg:w-[200px]"> 
                     <Link to={"/movie/" + movieslist.id} > 
                      <img className='rounded-t-2xl w-full sm:h-[13rem] h-[12rem]  md:h-[280px] lg:h-[200px] cover' src={IMAGE_PATH + movieslist.poster_path} alt='' />
                      

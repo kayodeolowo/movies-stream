@@ -85,7 +85,7 @@ const Navbar = () => {
              <div   onClick={handleNav} className={nav ? ' leading-loose text-center text-2xl rounded-l-bg absolute text-white  left-0 top-0    w-1/2 m-auto z-10    flex h-screen    bg-[#171E31]  duration-100 flex-col' : 'absolute left-[-100%] '}>
               <div > 
                  <div className='w-fit mx-auto  mt-20'> 
-                         <divSwitch/>
+                        
                    </div>
                     <ul data-aos="fade-up"  className='lg:hidden ml-4  font-semibold mt-2 font-fira  flex flex-col '>
                       <Link to='/'  className=' flex text-yellow-500 justify-center duration-200  mt-6  border-b-2 '  >   Movies  <FcHome className='mt-3 ml-1'> </FcHome>    </Link>

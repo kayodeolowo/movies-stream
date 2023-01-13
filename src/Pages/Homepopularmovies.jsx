@@ -52,8 +52,8 @@ const Homepopularmovies = () => {
     <div className='grid grid-cols-2 mt-4 gap-4 mx-3  lg:gap-10  sm:grid-cols-3 lg:grid-cols-3  xl:grid-cols-5 text-white sm:gap-6 '> 
           {
             loading && popularMovies.map ((movieslist)=> (
-              <CardTheme> 
-                <div key={movieslist.id} className=" shadow-2xl  rounded-2xl   h-[16.5rem] w-[9rem] sm:h-[18rem] sm:w-[9rem] md:w-[12rem] md:h-[22rem] mx-auto lg:h-[280px]  lg:w-[200px]"> 
+              <CardTheme key={movieslist.id}> 
+                <div  className=" shadow-2xl  rounded-2xl   h-[16.5rem] w-[9rem] sm:h-[18rem] sm:w-[9rem] md:w-[12rem] md:h-[22rem] mx-auto lg:h-[280px]  lg:w-[200px]"> 
 
                     
                 
