@@ -12,7 +12,7 @@ export const Trailer = () => {
 
      useEffect(()=> {
          getMoviestrailer()
-    })
+    }, [])
 
     const getMoviestrailer = async ()=> {
          try {

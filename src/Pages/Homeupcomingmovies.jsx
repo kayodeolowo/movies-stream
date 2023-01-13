@@ -3,16 +3,16 @@ import axios from 'axios'
 import Moment from 'react-moment';
 import {TiStarFullOutline} from 'react-icons/ti'
 import {Link } from 'react-router-dom'
-import {BsFillCaretRightFill,BsFillCaretLeftFill,BsDot} from 'react-icons/bs'
-import Search from '../Components/Search';
-import { CardTheme, Theme } from '../Components/Theme';
+import {BsFillCaretRightFill,BsFillCaretLeftFill} from 'react-icons/bs'
+
+import { CardTheme} from '../Components/Theme';
 
 
 const Homeupcomingmovies = () => {
 
         useEffect(()=> {
         getUpcomingmovies()
-    })
+    }, [])
 
     const [upcomingMovies, setUpcomingMovies] = useState([])
     const [loading, setLoading] = useState (false)
@@ -23,7 +23,7 @@ const Homeupcomingmovies = () => {
          try {
             const res = await axios.get (`https://api.themoviedb.org/3/movie/upcoming?api_key=12cfc3ac71d8ea0235235c0fb2347238&language=en-US&page=${currentpage}`)
             setUpcomingMovies(res.data.results) 
-            console.log(res.data.results, "upcoming")
+           console.log(res.data.results, "upcoming")
             setLoading(true)
 
         } catch (err) {
@@ -37,14 +37,14 @@ const Homeupcomingmovies = () => {
 
 
   return (
-    <Theme>
+    <div>
        <div className='container mx-auto  '>
 
       
         
        
 
-         <h1 className=' mx-3 sm:mx-6 text-lg sm:text-xl  font-semibold text-center lg:text-start '> Upcoming Movies </h1>
+         <h1 className=' mx-3 sm:mx-6 text-lg sm:text-xl text-white font-semibold text-center lg:text-start '> Upcoming Movies </h1>
        
     <div className='grid grid-cols-2 mt-4 gap-4 mx-3  lg:gap-10  sm:grid-cols-3 lg:grid-cols-3  xl:grid-cols-5 text-white sm:gap-6'> 
         
@@ -92,7 +92,7 @@ const Homeupcomingmovies = () => {
                          }} > 
                         <BsFillCaretLeftFill className='text-yellow-300 font-bold text-2xl sm:text-3xl'> </BsFillCaretLeftFill>
               </button> 
-                            <h2 className='mt-1'> {currentpage} </h2>
+                            <h2 className='mt-1 text-white'> {currentpage} </h2>
 
                <button onClick={()=>setCurrentpage(currentpage+1)}  > 
                         <BsFillCaretRightFill className='text-yellow-300 font-bold text-2xl sm:text-3xl'> </BsFillCaretRightFill>
@@ -102,7 +102,7 @@ const Homeupcomingmovies = () => {
              
         </div> 
     </div>
-    </Theme>
+    </div>
   )
 }
 

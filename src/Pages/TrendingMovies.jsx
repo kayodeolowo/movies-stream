@@ -5,13 +5,13 @@ import {TiStarFullOutline} from 'react-icons/ti'
 import {Link } from 'react-router-dom'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-import { Theme } from '../Components/Theme';
+
 
 
 const TrendingMovies = () => {
     useEffect(()=> {
         getPopularmovies()
-    })
+    }, [])
 
     const [popularMovies, setPopularMovies] = useState([])
     const [loading, setLoading] = useState (false)
@@ -48,9 +48,9 @@ const TrendingMovies = () => {
   return (
 
  
-    <Theme>    
+    <div>    
     <div className='container mx-auto pt-10 sm:pt-14 '>
-        <h1 className=' text-center text-lg  font-semibold mx-3 sm:mx-6 '> Trending Movies </h1>
+        <h1 className=' text-center text-lg  font-semibold mx-3 sm:mx-6 text-white'> Trending Movies </h1>
     <Splide className='hidden md:inline' options={{
                         perPage:2,
                         page:1,
@@ -75,8 +75,8 @@ const TrendingMovies = () => {
                     <Link to={"/movie/" + movieslist.id} > 
                      <img className='rounded-2xl w-full mt-6  md:max-h-[250px] lg:max-h-[300px] lg:w-fit lg:mx-auto cover' src={IMAGE_PATH + movieslist.backdrop_path} alt='' />
                     <div className=' text-center text-xs mt-2  font-semibold'> 
-                       <h1 className='text-xl lg:text-2xl font-bold sm:mt-1 md:mt-2 mt-2 mx-1'>   {movieslist.title} </h1>
-                        <h1 className=' mt-1'> <Moment  format='yyyy' >{movieslist.release_date}</Moment> </h1> 
+                       <h1 className='text-xl lg:text-2xl font-bold sm:mt-1 md:mt-2 mt-2 mx-1 text-white'>   {movieslist.title} </h1>
+                        <h1 className=' mt-1 text-white'> <Moment  format='yyyy' >{movieslist.release_date}</Moment> </h1> 
                     </div>
                      
                        
@@ -102,8 +102,7 @@ const TrendingMovies = () => {
     
 
 
-          {
-            loading && popularMovies.map ((movieslist)=> (
+          {    loading && popularMovies.map ((movieslist)=> (
                 <SplideSlide key={movieslist.id} className=" shadow-2xl    "> 
 
                     
@@ -114,8 +113,8 @@ const TrendingMovies = () => {
                    
                        
                          
-                        <h1 className='text-lg sm:text-2xl  text-center font-bold  md:mt-2 mt-2'>   {movieslist.title} </h1>
-                        <h1 className=' text-center text-gray-500 font-semibold '> <Moment  format='yyyy' >{movieslist.release_date}</Moment> </h1>
+                        <h1 className='text-lg sm:text-2xl  text-center font-bold text-white   md:mt-2 mt-2'>   {movieslist.title} </h1>
+                        <h1 className=' text-center  font-semibold text-white  '> <Moment  format='yyyy' >{movieslist.release_date}</Moment> </h1>
                     </div>
                     
                     
@@ -129,13 +128,11 @@ const TrendingMovies = () => {
     </Splide>
        
        
-      
-
 
 
         
     </div>
-    </Theme>
+    </div>
 
 
 

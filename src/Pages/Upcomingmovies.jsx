@@ -5,14 +5,14 @@ import {TiStarFullOutline} from 'react-icons/ti'
 import {Link } from 'react-router-dom'
 import {BsFillCaretRightFill,BsFillCaretLeftFill,BsDot} from 'react-icons/bs'
 import Search from '../Components/Search';
-import { CardTheme, Theme } from '../Components/Theme';
+import { CardTheme } from '../Components/Theme';
 
 
 const Upcomingmovies = () => {
 
         useEffect(()=> {
         getUpcomingmovies()
-    })
+    }, [])
 
     const [upcomingMovies, setUpcomingMovies] = useState([])
     const [loading, setLoading] = useState (false)
@@ -37,7 +37,7 @@ const Upcomingmovies = () => {
 
 
   return (
-    <Theme>
+    <div>
        <div className='container mx-auto pt-2 sm:pt-6 '>
 
       
@@ -45,7 +45,7 @@ const Upcomingmovies = () => {
  dark:text-gray-800'> </BsDot> </h1>
         <Search/>
 
-         <h1 className=' mx-3 sm:mx-6 text-lg sm:text-xl mt-2 font-semibold text-center lg:text-start '> Upcoming Movies </h1>
+         <h1 className=' mx-3 sm:mx-6 text-lg sm:text-xl mt-2 font-semibold text-center  text-white lg:mt-10'> Upcoming Movies </h1>
        
     <div className='grid grid-cols-2 mt-4 gap-4 mx-3  lg:gap-10  sm:grid-cols-3 lg:grid-cols-3  xl:grid-cols-5 text-white sm:gap-6 '> 
         
@@ -100,7 +100,7 @@ const Upcomingmovies = () => {
                          }} > 
                         <BsFillCaretLeftFill className='text-yellow-300 font-bold text-2xl sm:text-3xl'> </BsFillCaretLeftFill>
               </button> 
-                            <h2 className='mt-1'> {currentpage} </h2>
+                            <h2 className='mt-1 text-white '> {currentpage} </h2>
 
                <button onClick={()=>setCurrentpage(currentpage+1)}  > 
                         <BsFillCaretRightFill className='text-yellow-300 font-bold text-2xl sm:text-3xl'> </BsFillCaretRightFill>
@@ -110,7 +110,7 @@ const Upcomingmovies = () => {
              
         </div> 
     </div>
-    </Theme>
+    </div>
   )
 }
 

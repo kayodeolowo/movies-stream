@@ -8,14 +8,14 @@ import Moment from 'react-moment';
 import {FaDotCircle} from 'react-icons/fa'
 import SimilarMovies from "./SimilarMovies";
 import {RiEmotionSadLine} from 'react-icons/ri'
-import { Theme } from "../Components/Theme";
+
 
 const MoviesDetails = () => {
     let params = useParams();
 
      useEffect(()=> {
          getMoviesdetails()
-    })
+    }, [])
 
     const [moviesdetails, setMoviesdetails] = useState({});
      const [loading, setLoading] = useState (false)
@@ -39,7 +39,7 @@ const MoviesDetails = () => {
 
 
   return (
-  <Theme>
+  <div>
     <div className="container mx-auto   pt-10 sm:pt-14">
       <div className="lg:flex lg:flex-row  "> 
           <div className="lg:w-1/2 w-full mt-4 mx-auto"> 
@@ -55,10 +55,10 @@ const MoviesDetails = () => {
 
           
               
-            <div className="lg:w-1/2 mx-auto text-center lg:text-start  mt-4"> 
+            <div className="lg:w-1/2 mx-auto text-center lg:text-start text-white  mt-4"> 
               
-              <h1 className="text-bold text-xl sm:text-3xl lg:text-5xl "> {moviesdetails.original_title} </h1>
-              <h1 className=" text-sm sm:text-xl lg:text-2xl mt-2 text-gray-400"> {moviesdetails.tagline} </h1>
+              <h1 className="text-bold text-xl sm:text-3xl lg:text-5xl text-white "> {moviesdetails.original_title} </h1>
+              <h1 className=" text-sm sm:text-xl lg:text-2xl mt-2 text-white"> {moviesdetails.tagline} </h1>
                 <div> 
                  
                   </div> 
@@ -105,7 +105,7 @@ const MoviesDetails = () => {
         </div>
          <SimilarMovies/>
     </div>
-  </Theme>
+  </div>
   )
 }
 

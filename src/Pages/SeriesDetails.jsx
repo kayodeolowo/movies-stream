@@ -7,14 +7,14 @@ import {FaDotCircle} from 'react-icons/fa'
 import SimilarMovies from "./SimilarMovies";
 import { SeriesTrailer } from "../Components/SeriesTrailer";
 import {RiEmotionSadLine } from 'react-icons/ri'
-import { Theme } from "../Components/Theme";
+
 
 const SeriesDetails = () => {
     let params = useParams();
 
      useEffect(()=> {
          getSeriesdetails()
-    })
+    }, [])
 
     const [seriesdetails, setseriesdetails] = useState({});
      const [loading, setLoading] = useState (false)
@@ -37,7 +37,7 @@ const SeriesDetails = () => {
 
 
   return (
-    <Theme> 
+    <div> 
     <div className="container mx-auto   pt-10 sm:pt-14">
       <div className="lg:flex lg:flex-row  "> 
           <div className="lg:w-1/2 w-full mt-4 mx-auto"> 
@@ -51,7 +51,7 @@ const SeriesDetails = () => {
                </div>      )}
           </div>
               
-            <div className="lg:w-1/2 mx-auto text-center lg:text-start  mt-4"> 
+            <div className="lg:w-1/2 mx-auto text-center lg:text-start text-white  mt-4"> 
               
               <h1 className="text-bold text-xl sm:text-3xl lg:text-5xl "> {seriesdetails.original_name} </h1>
               <h1 className=" text-sm sm:text-xl lg:text-2xl mt-2 text-gray-400"> {seriesdetails.tagline} </h1>
@@ -97,7 +97,7 @@ const SeriesDetails = () => {
         </div>
          <SimilarMovies/>
     </div>
-    </Theme>
+    </div>
     
   )
 }

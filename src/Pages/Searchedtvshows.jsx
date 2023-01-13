@@ -7,7 +7,7 @@ import {TiStarFullOutline} from 'react-icons/ti'
 import Search from '../Components/Search';
 import {BsDot} from 'react-icons/bs'
 import SearchTv from '../Components/SearchTv';
-import { CardTheme, Theme } from '../Components/Theme';
+import { CardTheme } from '../Components/Theme';
 
 
 
@@ -23,7 +23,7 @@ function Searchedtvshows() {
             const res = await axios.get (`https://api.themoviedb.org/3/search/tv?api_key=12cfc3ac71d8ea0235235c0fb2347238&query=${name}`)
             
             setSearchedMovies(res.data.results) 
-            console.log(res.data.results, "search")
+           console.log(res.data.results, "search")
             setLoading(true)
 
         } catch (err) {
@@ -39,7 +39,7 @@ function Searchedtvshows() {
     },[params.search]);
 
   return (
-    <Theme>
+    <div>
      <div className='container mx-auto pt-2 sm:pt-6 '>
 
       
@@ -78,7 +78,7 @@ function Searchedtvshows() {
         }
     </div>
     </div>
-    </Theme>
+    </div>
   )
 }
 
