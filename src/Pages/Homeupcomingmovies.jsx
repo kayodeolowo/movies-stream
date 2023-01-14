@@ -12,7 +12,7 @@ const Homeupcomingmovies = () => {
 
         useEffect(()=> {
         getUpcomingmovies()
-    }, [])
+    })
 
     const [upcomingMovies, setUpcomingMovies] = useState([])
     const [loading, setLoading] = useState (false)

@@ -15,7 +15,7 @@ const  Popularseries = () => {
     
     useEffect(()=> {
         getPopularseries()
-    }, [])
+    })
 
     
     const [Popularseries, setPopularseries] = useState([])

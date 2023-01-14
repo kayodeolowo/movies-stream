@@ -10,7 +10,7 @@ import { CardTheme } from '../Components/Theme';
 const Hometopratedmovies = () => {
      useEffect(()=> {
         getTopratedmovies()
-    }, [])
+    })
 
     const [topratedMovies, setTopratedMovies] = useState([])
     const [loading, setLoading] = useState (false)

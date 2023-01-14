@@ -12,7 +12,7 @@ import { CardTheme } from '../Components/Theme';
 const Topratedseries = () => {
      useEffect(()=> {
         getTopratedseries()
-    }, [])
+    })
 
     const [topratedseries, setTopratedseries] = useState([])
     const [loading, setLoading] = useState (false)

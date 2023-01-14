@@ -38,7 +38,7 @@ const Homepopularmovies = () => {
 
     useEffect(()=> {
         getPopularmovies()
-    }, []);
+    });
 
   
 

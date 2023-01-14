@@ -24,7 +24,7 @@ const SeriesDetails = () => {
          try {
             const res = await axios.get (`https://api.themoviedb.org/3/tv/${params.name}?api_key=12cfc3ac71d8ea0235235c0fb2347238&language=en-US`)
             setseriesdetails(res.data) 
-            console.log(res.data, "seriesdetails")
+           // console.log(res.data, "seriesdetails")
            
             setLoading(true)
 

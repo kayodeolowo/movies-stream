@@ -11,7 +11,7 @@ import {  CardTheme } from '../Components/Theme';
 const Popular = () => {
     useEffect(()=> {
         getPopularmovies()
-    }, [])
+    })
 
     const [popularMovies, setPopularMovies] = useState([])
     const [loading, setLoading] = useState (false)

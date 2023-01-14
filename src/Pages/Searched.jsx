@@ -22,7 +22,7 @@ function Searched() {
             const res = await axios.get (`https://api.themoviedb.org/3/search/movie?api_key=12cfc3ac71d8ea0235235c0fb2347238&query=${name}`)
             
             setSearchedMovies(res.data.results) 
-           console.log(res.data.results, "search")
+          // console.log(res.data.results, "search")
             setLoading(true)
 
         } catch (err) {
@@ -45,7 +45,7 @@ function Searched() {
         <h1 className=' mx-auto text-inherit sm:mx-6 text-xl mt-4 font-semibold text-center lg:text-start  text-[0px] '> <BsDot className='text-white  text-[3px]'> </BsDot> </h1>
         <Search/>
 
-         <h1 className=' mx-3 sm:mx-6 text-lg sm:text-xl mt-2 font-semibold text-center lg:text-start '> Searched Movies </h1>
+         <h1 className=' mx-3 sm:mx-6 text-lg sm:text-xl mt-2 font-semibold text-center text-white '> Searched Movies </h1>
       
           <div className='grid grid-cols-2 mt-4 gap-4 mx-3  lg:gap-10  sm:grid-cols-3 lg:grid-cols-3  xl:grid-cols-5 text-white sm:gap-6  '> 
 

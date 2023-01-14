@@ -21,7 +21,7 @@ const SimilarMovies = () => {
          try {
             const res = await axios.get (`https://api.themoviedb.org/3/movie/${params.name}/similar?api_key=12cfc3ac71d8ea0235235c0fb2347238&language=en-US`)
             setSimilarMovies(res.data.results) 
-            console.log(res.data.results, "similar")
+          //  console.log(res.data.results, "similar")
             setLoading(true)
 
 

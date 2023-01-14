@@ -12,7 +12,7 @@ const Upcomingmovies = () => {
 
         useEffect(()=> {
         getUpcomingmovies()
-    }, [])
+    })
 
     const [upcomingMovies, setUpcomingMovies] = useState([])
     const [loading, setLoading] = useState (false)
@@ -23,7 +23,7 @@ const Upcomingmovies = () => {
          try {
             const res = await axios.get (`https://api.themoviedb.org/3/movie/upcoming?api_key=12cfc3ac71d8ea0235235c0fb2347238&language=en-US&page=${currentpage}`)
             setUpcomingMovies(res.data.results) 
-            console.log(res.data.results, "upcoming")
+           // console.log(res.data.results, "upcoming")
             setLoading(true)
 
         } catch (err) {
