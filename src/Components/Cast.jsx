@@ -15,7 +15,7 @@ export const Cast = () => {
 
      useEffect(()=> {
          getMoviescast()
-    },[])
+    })
 
     const getMoviescast = async ()=> {
          try {
