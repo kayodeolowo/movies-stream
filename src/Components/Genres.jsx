@@ -16,7 +16,7 @@ const Genres = () => {
          try {
             const res = await axios.get (`https://api.themoviedb.org/3/genre/movie/list?api_key=12cfc3ac71d8ea0235235c0fb2347238&language=en-US`)
             setGenres(res.data.genres) 
-            console.log(res.data.genres, "Genre")
+           // console.log(res.data.genres, "Genre")
             setLoading(true)
 
         } catch (err) {

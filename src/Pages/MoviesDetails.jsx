@@ -15,7 +15,7 @@ const MoviesDetails = () => {
 
      useEffect(()=> {
          getMoviesdetails()
-    }, [])
+    })
 
     const [moviesdetails, setMoviesdetails] = useState({});
      const [loading, setLoading] = useState (false)
@@ -25,7 +25,7 @@ const MoviesDetails = () => {
          try {
             const res = await axios.get (`https://api.themoviedb.org/3/movie/${params.name}?api_key=12cfc3ac71d8ea0235235c0fb2347238&language=en-US`)
             setMoviesdetails(res.data) 
-            console.log(res.data, "moviedetails")
+           // console.log(res.data, "moviedetails")
            
             setLoading(true)
 

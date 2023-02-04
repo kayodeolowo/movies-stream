@@ -6,12 +6,12 @@ import {TiStarFullOutline} from 'react-icons/ti'
 import {Link } from 'react-router-dom'
 import { CardTheme } from "../Components/Theme";
 
-const SimilarMovies = () => {
+const SimilarTvshows = () => {
 
     let params = useParams();
 
     useEffect(()=> {
-        getSimilarmovies()
+        getSimilarTvshows()
     },[])
     
      const [similarMovies, setSimilarMovies] = useState([])
@@ -19,11 +19,11 @@ const SimilarMovies = () => {
      const [currentpage, setCurrentpage] = useState(1)
      const IMAGE_PATH = "https://image.tmdb.org/t/p/w1280";
 
-        const getSimilarmovies = async ()=> {
+        const getSimilarTvshows = async ()=> {
          try {
-            const res = await axios.get (`https://api.themoviedb.org/3/movie/${params.name}/similar?api_key=12cfc3ac71d8ea0235235c0fb2347238&language=en-US`)
+            const res = await axios.get (`https://api.themoviedb.org/3/tv/${params.name}/similar?api_key=12cfc3ac71d8ea0235235c0fb2347238&language=en-US`)
             setSimilarMovies(res.data.results) 
-           // console.log(res.data.results, "similar")
+          //  console.log(res.data.results, "similar")
             setLoading(true)     
         } catch (err) {
                
@@ -57,7 +57,7 @@ const SimilarMovies = () => {
                     )  }
                         <h1> <Moment  format='yyyy' >{movieslist.release_date}</Moment> </h1> 
                     </div>
-                      <h1 className='text-xs font-bold sm:mt-1 md:mt-2 mt-2 mx-1'>   {movieslist.title} </h1>
+                      <h1 className='text-xs font-bold sm:mt-1 md:mt-2 mt-2 mx-1'>   {movieslist.name} </h1>
                        
                      
                     </Link>
@@ -77,4 +77,4 @@ const SimilarMovies = () => {
   )
 }
 
-export default SimilarMovies
+export default SimilarTvshows

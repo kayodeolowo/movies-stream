@@ -12,12 +12,12 @@ export const SeriesTrailer = () => {
 
      useEffect(()=> {
          getMoviestrailer()
-    },[])
+    })
 
     const getMoviestrailer = async ()=> {
          try {
             const res = await axios.get (`https://api.themoviedb.org/3/tv/${params.name}/videos?api_key=12cfc3ac71d8ea0235235c0fb2347238&language=en-US`)
-            setTrailer(res.data.results[0])
+            setTrailer(res.data.results[1])
            // console.log(res.data.results, "series trailer")
             setLoading(true)
 

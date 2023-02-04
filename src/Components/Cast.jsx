@@ -21,7 +21,7 @@ export const Cast = () => {
          try {
             const res = await axios.get (`https://api.themoviedb.org/3/movie/${params.name}/credits?api_key=12cfc3ac71d8ea0235235c0fb2347238&language=en-US`)
             setCast(res.data)
-            console.log(res.data, "cast")
+          //  console.log(res.data, "cast")
            
             setLoading(true)
 

@@ -7,6 +7,7 @@ import {FaDotCircle} from 'react-icons/fa'
 import SimilarMovies from "./SimilarMovies";
 import { SeriesTrailer } from "../Components/SeriesTrailer";
 import {RiEmotionSadLine } from 'react-icons/ri'
+import SimilarTvshows from "./SimilarTvshows";
 
 
 const SeriesDetails = () => {
@@ -14,7 +15,7 @@ const SeriesDetails = () => {
 
      useEffect(()=> {
          getSeriesdetails()
-    }, [])
+    })
 
     const [seriesdetails, setseriesdetails] = useState({});
      const [loading, setLoading] = useState (false)
@@ -95,7 +96,7 @@ const SeriesDetails = () => {
            
             </div>
         </div>
-         <SimilarMovies/>
+         <SimilarTvshows/>
     </div>
     </div>
     

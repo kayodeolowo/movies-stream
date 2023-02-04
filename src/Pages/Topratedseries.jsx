@@ -10,6 +10,7 @@ import { CardTheme } from '../Components/Theme';
 
 
 const Topratedseries = () => {
+  
      useEffect(()=> {
         getTopratedseries()
     })
@@ -24,7 +25,7 @@ const Topratedseries = () => {
             const res = await axios.get (`https://api.themoviedb.org/3/tv/top_rated?api_key=12cfc3ac71d8ea0235235c0fb2347238&language=en-US&page=${currentpage}`)
             
             setTopratedseries(res.data.results) 
-            console.log(res.data.results, "top")
+           // console.log(res.data.results, "top")
             setLoading(true)
 
         } catch (err) {
