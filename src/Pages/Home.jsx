@@ -13,9 +13,9 @@ const Home = () => {
 
         
         <TrendingMovies/>
-        <Homepopularmovies/>
         <Homeupcomingmovies/>
-      <Hometopratedmovies/>
+        <Hometopratedmovies/>
+        <Homepopularmovies/>
         
         
         {/* <Genres/> */}

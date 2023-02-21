@@ -46,7 +46,7 @@ function Searchedtvshows() {
         <h1 className='text-white mx-auto text-inherit sm:mx-6 text-xl mt-4 font-semibold text-center lg:text-start  '> <BsDot className='text-[3px] '> </BsDot> </h1>
         <SearchTv/>
 
-         <h1 className=' mx-3 sm:mx-6 text-lg sm:text-xl mt-2 font-semibold text-center text-white '> Searched Series </h1>
+         <h1 className=' border border-[#E0A040] w-fit mx-auto rounded-md px-2 py-1 mb-4 text-lg sm:text-xl mt-2 font-semibold text-center text-white '> Searched Series </h1>
       
           <div className='grid grid-cols-2 mt-4 gap-4 mx-3  lg:gap-10  sm:grid-cols-3 lg:grid-cols-3  xl:grid-cols-5 text-white sm:gap-6 '> 
 

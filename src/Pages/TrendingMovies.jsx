@@ -50,7 +50,7 @@ const TrendingMovies = () => {
  
     <div>    
     <div className='container mx-auto pt-10 sm:pt-14 '>
-        <h1 className=' text-center text-lg  font-semibold mx-3 sm:mx-6 text-white'> Trending Movies </h1>
+        <h1 className=' text-center text-lg  font-semibold  text-red-500 w-fit mx-auto rounded-md px-2 py-1 mb-4'> Trending Movies </h1>
     <Splide className='hidden md:inline' options={{
                         perPage:2,
                         page:1,

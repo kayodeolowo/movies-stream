@@ -44,7 +44,7 @@ const Homeupcomingmovies = () => {
         
        
 
-         <h1 className=' mx-3 sm:mx-6 text-lg sm:text-xl text-white font-semibold text-center lg:text-start '> Upcoming Movies </h1>
+         <h1 className=' border-b border-red-500 w-fit mx-auto rounded-md px-2 py-1 mb-4 text-lg sm:text-xl text-white font-semibold text-center lg:text-start  mt-4'> Upcoming Movies </h1>
        
     <div className='grid grid-cols-2 mt-4 gap-4 mx-3  lg:gap-10  sm:grid-cols-3 lg:grid-cols-3  xl:grid-cols-5 text-white sm:gap-6'> 
         

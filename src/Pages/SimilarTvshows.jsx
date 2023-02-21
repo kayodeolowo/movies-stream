@@ -36,7 +36,7 @@ const SimilarTvshows = () => {
     
     <div> 
      <div className='container mx-auto pt-10 sm:pt-14 pb-10  '>
-        <h1 className=' mx-3 sm:mx-6 lg:text-3xl text-white'> Similar Movies for you </h1>
+        <h1 className=' border border-[#E0A040] w-fit mx-auto rounded-md px-2 py-1 mb-4 lg:text-xl text-white'> Similar Movies for you </h1>
     <div className='grid grid-cols-2 mt-4 gap-4 mx-3  lg:gap-10  sm:grid-cols-3 lg:grid-cols-3  xl:grid-cols-5 text-white sm:gap-6 '> 
 
           {

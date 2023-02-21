@@ -46,7 +46,7 @@ const Popular = () => {
  dark:text-gray-800'> </BsDot> </h1>
         <Search/>
 
-         <h1 className=' mx-3 text-white lg:mt-10  sm:mx-6 text-lg sm:text-xl mt-2 font-semibold text-center  '> Popular Movies </h1>
+         <h1 className=' border border-[#E0A040] w-fit mx-auto rounded-md px-2 py-1 mb-8 text-white lg:mt-10   text-lg sm:text-xl mt-10 font-semibold text-center  '> Popular Movies </h1>
 
        <div className='grid grid-cols-2 mt-4 gap-4 mx-3  lg:gap-10  sm:grid-cols-3 lg:grid-cols-3  xl:grid-cols-5 text-white sm:gap-6 '> 
           {
